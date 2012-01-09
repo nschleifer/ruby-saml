@@ -21,6 +21,9 @@ include REXML
 		root.attributes['Version'] = "2.0"
 		
 		# Conditionally defined elements based on settings
+		if settings.protocol_binding != nil
+			root.attributes["ProtocolBinding"] = settings.protocol_binding
+		end
 		if settings.assertion_consumer_service_url != nil
 			root.attributes["AssertionConsumerServiceURL"] = settings.assertion_consumer_service_url
 		end
